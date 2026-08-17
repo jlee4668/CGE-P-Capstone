@@ -1,5 +1,7 @@
 # CGE-P Lab 2.3 — Compliant S3 Resource
 
+This module enforces SC-28, AU-3, AU-6, CM-6, AC-3 on a single S3 bucket.
+
 ## Overview
 
 This lab implements a reusable Terraform infrastructure primitive for

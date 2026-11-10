@@ -1,0 +1,16 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [],
+          "text": "data.compliance.sc28.deny",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

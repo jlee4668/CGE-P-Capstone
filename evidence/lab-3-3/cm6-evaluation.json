@@ -1,0 +1,16 @@
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [],
+          "text": "data.compliance.cm6.deny",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}

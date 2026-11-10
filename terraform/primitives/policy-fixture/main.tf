@@ -54,6 +54,9 @@ resource "google_storage_bucket" "bad_no_cmek" {
   location                    = "us-central1"
   uniform_bucket_level_access = true
   public_access_prevention    = "enforced"
+  encryption {
+    default_kms_key_name = google_kms_crypto_key.key.id
+  }
 
   labels = {
     project          = "lab33"
@@ -67,8 +70,8 @@ resource "google_storage_bucket" "bad_no_cmek" {
 resource "google_storage_bucket" "bad_public" {
   name                        = "${var.gcp_project}-lab33-bad-public"
   location                    = "us-central1"
-  uniform_bucket_level_access = false
-  public_access_prevention    = "inherited"
+  uniform_bucket_level_access = true
+  public_access_prevention    = "enforced"
 
   encryption {
     default_kms_key_name = google_kms_crypto_key.key.id
@@ -88,6 +91,12 @@ resource "google_storage_bucket" "bad_no_labels" {
   location                    = "us-central1"
   uniform_bucket_level_access = true
   public_access_prevention    = "enforced"
+  labels = {
+    project          = "lab33"
+    environment      = "dev"
+    managed_by       = "terraform"
+    compliance_scope = "cge-p-lab"
+  }
 
   encryption {
     default_kms_key_name = google_kms_crypto_key.key.id
@@ -105,7 +114,7 @@ resource "google_compute_firewall" "open_ssh" {
   name          = "lab33-open-ssh"
   network       = google_compute_network.demo.name
   direction     = "INGRESS"
-  source_ranges = ["0.0.0.0/0"]
+  source_ranges = ["192.0.2.0/24"]
 
   allow {
     protocol = "tcp"

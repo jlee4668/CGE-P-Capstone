@@ -4,7 +4,7 @@ A hands-on portfolio demonstrating Governance, Risk, and Compliance (GRC) engine
 
 ## Overview
 
-This repository documents my progression through the CGE-P (Cloud GRC Engineering Professional) labs and capstone work.
+This repository documents my progression through the CGE-P (Certified GRC Engineer Practicioner) labs and capstone work.
 
 The project focuses on applying engineering practices to traditionally manual GRC activities by translating security and compliance requirements into:
 
